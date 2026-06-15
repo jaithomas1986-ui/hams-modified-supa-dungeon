@@ -14,24 +14,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, location) {
     scene.cameraShake(4, 500)
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
-    gun = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
     tiles.setCurrentTilemap(tilemap`level11`)
     tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath8)
 })
@@ -109,6 +91,25 @@ scene.onOverlapTile(SpriteKind.Player, sprites.jewels.jewel3, function (sprite, 
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadIntersection2, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level8`)
+    gun = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . f . . . . . . . . . . f f 
+        . . f 6 f f f f f f f f f f 6 f 
+        . . f 9 6 6 9 9 9 6 6 9 9 6 6 f 
+        . f b b b b b b b b b b b b b f 
+        . f f f f f f f f f f f f f f f 
+        . . f b 6 f . f . f . . . . . . 
+        . . f b 6 f f f f . . . . . . . 
+        . f b 6 f . . . . . . . . . . . 
+        . f b 6 f . . . . . . . . . . . 
+        f b 6 f . . . . . . . . . . . . 
+        f f f f . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tiles.placeOnRandomTile(gun, assets.tile`myTile5`)
     mySprite3 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . c c c c . . . . 
@@ -141,9 +142,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     pause(500)
 })
 let mySprite3: Sprite = null
+let gun: Sprite = null
 let mySprite2: Sprite = null
 let myMinimap: Sprite = null
-let gun: Sprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
