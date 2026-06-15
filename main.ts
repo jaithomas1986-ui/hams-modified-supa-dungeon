@@ -12,7 +12,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Render.toggleViewMode()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, location) {
-    scene.cameraShake(100, 500)
+    scene.cameraShake(4, 500)
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     tiles.setCurrentTilemap(tilemap`level11`)
     tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath8)
