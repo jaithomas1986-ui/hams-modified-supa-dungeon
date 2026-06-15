@@ -235,34 +235,6 @@
         ],
         "displayName": "level3"
     },
-    "level5": {
-        "id": "level5",
-        "mimeType": "application/mkcd-tilemap",
-        "data": "MTAwYjAwMDkwMDA1MDYwNjA2MGEwZTBhMDYwNjA2MDQwOTAxMDEwMTAxMDEwMTAxMDEwMTA3MDkwMTAxMDEwZjBmMGYwMTAxMDEwNzBkMDEwMTBmMGYxMzBmMGYwMTAxMGMwZTExMDEwZjEzMTIxMzBmMDEwMTA3MGQwMTAxMGYxMDEyMGYwZjAxMDEwYzA5MDEwMTAxMGYwZjBmMDEwMTAxMDcwOTAxMDEwMTAxMDEwMTAxMDEwMTA3MDIwODA4MDgwYjA4MGIwODA4MDgwMzIyMjIwMjIyMjIyMjAwMDAwMDAwMjAwMjAwMDAwMDAwMjIwMDAwMDIwMDIwMDIwMDIyMDIwMDIyMDAwMDAyMDAyMDAyMDAwMDAwMDAyMjAwMDAwMDAwMjAyMjIyMjIyMjIyMDI=",
-        "tileset": [
-            "myTiles.transparency16",
-            "sprites.dungeon.floorLight0",
-            "sprites.dungeon.greenOuterSouthEast",
-            "sprites.dungeon.greenOuterSouthWest",
-            "sprites.dungeon.greenOuterNorthEast",
-            "sprites.dungeon.greenOuterNorthWest",
-            "sprites.dungeon.greenOuterNorth0",
-            "sprites.dungeon.greenOuterEast0",
-            "sprites.dungeon.greenOuterSouth1",
-            "sprites.dungeon.greenOuterWest0",
-            "sprites.dungeon.greenOuterNorth2",
-            "sprites.dungeon.greenOuterSouth2",
-            "sprites.dungeon.greenOuterEast2",
-            "sprites.dungeon.greenOuterWest2",
-            "sprites.dungeon.doorOpenNorth",
-            "sprites.dungeon.floorLight2",
-            "sprites.dungeon.floorLight5",
-            "sprites.dungeon.doorClosedWest",
-            "myTiles.tile1",
-            "sprites.dungeon.hazardHole"
-        ],
-        "displayName": "level5"
-    },
     "level10": {
         "id": "level10",
         "mimeType": "application/mkcd-tilemap",
@@ -325,6 +297,34 @@
             "sprites.dungeon.floorLight2"
         ],
         "displayName": "level8"
+    },
+    "level5": {
+        "id": "level5",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAwYjAwMDkwMDA1MDYwNjA2MGEwZTBhMDYwNjA2MDQwOTAxMDEwMTAxMDEwMTAxMDEwMTA3MDkwMTAxMDEwZjBmMGYwMTAxMDEwNzBkMDEwMTBmMGYxMzBmMGYwMTAxMGMwZTExMDEwZjEzMTIxMzBmMDEwMTA3MGQwMTAxMGYxMDEyMGYwZjAxMDEwYzA5MDEwMTAxMGYwZjBmMDEwMTAxMDcwOTAxMDEwMTAxMDEwMTAxMDEwMTA3MDIwODA4MDgwYjA4MGIwODA4MDgwMzIyMjIwMjIyMjIyMjAwMDAwMDAwMjAwMjAwMjIwMjAwMjIwMDIyMjIwMjIwMDIyMDIyMjIwMDIyMDAyMjIyMDIyMDAyMDAyMjAyMDAyMjAwMDAwMDAwMjAyMjIyMjIyMjIyMDI=",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.dungeon.floorLight0",
+            "sprites.dungeon.greenOuterSouthEast",
+            "sprites.dungeon.greenOuterSouthWest",
+            "sprites.dungeon.greenOuterNorthEast",
+            "sprites.dungeon.greenOuterNorthWest",
+            "sprites.dungeon.greenOuterNorth0",
+            "sprites.dungeon.greenOuterEast0",
+            "sprites.dungeon.greenOuterSouth1",
+            "sprites.dungeon.greenOuterWest0",
+            "sprites.dungeon.greenOuterNorth2",
+            "sprites.dungeon.greenOuterSouth2",
+            "sprites.dungeon.greenOuterEast2",
+            "sprites.dungeon.greenOuterWest2",
+            "sprites.dungeon.doorOpenNorth",
+            "sprites.dungeon.floorLight2",
+            "sprites.dungeon.floorLight5",
+            "sprites.dungeon.doorClosedWest",
+            "myTiles.tile1",
+            "sprites.dungeon.hazardHole"
+        ],
+        "displayName": "level5"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",

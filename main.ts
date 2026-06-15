@@ -1,3 +1,7 @@
+namespace SpriteKind {
+    export const gun = SpriteKind.create()
+    export const item = SpriteKind.create()
+}
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     Render.moveWithController(5)
     statusbar.value += -10
@@ -108,7 +112,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadIntersection2, functi
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.item)
     tiles.placeOnRandomTile(gun, assets.tile`myTile5`)
     mySprite3 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -132,9 +136,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadIntersection2, functi
     tiles.placeOnRandomTile(mySprite2, sprites.dungeon.floorLight0)
     tiles.placeOnRandomTile(mySprite3, sprites.dungeon.floorLight0)
     tiles.placeOnRandomTile(myMinimap, sprites.dungeon.floorLight0)
-    mySprite3.follow(mySprite, 30)
-    mySprite2.follow(mySprite, 30)
-    myMinimap.follow(mySprite, 30)
+    mySprite3.follow(mySprite, 35)
+    mySprite2.follow(mySprite, 35)
+    myMinimap.follow(mySprite, 35)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     scene.cameraShake(4, 500)
