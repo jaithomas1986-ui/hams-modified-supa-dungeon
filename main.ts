@@ -49,9 +49,6 @@ statusbars.onZero(StatusBarKind.Health, function (status) {
     music.play(music.createSoundEffect(WaveShape.Noise, 5000, 1, 255, 83, 1000, SoundExpressionEffect.Vibrato, InterpolationCurve.Logarithmic), music.PlaybackMode.LoopingInBackground)
     game.gameOver(false)
 })
-controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-	
-})
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     Render.moveWithController(3)
     statusbar.value += -5
