@@ -13,36 +13,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, location) {
     scene.cameraShake(100, 500)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     tiles.setCurrentTilemap(tilemap`level11`)
     tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath8)
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`baseTransparency16`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`level8`)
-    mySprite3 = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . c c c c . . . . 
-        . . . . . . c c d d d d c . . . 
-        . . . . . c c c c c c d c . . . 
-        . . . . c c 4 4 4 4 d c c . . . 
-        . . . c 4 d 4 4 4 4 4 1 c . c c 
-        . . c 4 4 4 1 4 4 4 4 d 1 c 4 c 
-        . c 4 4 4 4 1 4 4 4 4 4 1 c 4 c 
-        f 4 4 4 4 4 1 4 4 4 4 4 1 4 4 f 
-        f 4 4 4 f 4 1 c c 4 4 4 1 f 4 f 
-        f 4 4 4 4 4 1 4 4 f 4 4 d f 4 f 
-        . f 4 4 4 4 1 c 4 f 4 d f f f f 
-        . . f f 4 d 4 4 f f 4 c f c . . 
-        . . . . f f 4 4 4 4 c d b c . . 
-        . . . . . . f f f f d d d c . . 
-        . . . . . . . . . . c c c . . . 
-        `, SpriteKind.Enemy)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(18, 39))
-    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.floorLight0)
-    tiles.placeOnRandomTile(mySprite3, sprites.dungeon.floorLight0)
-    tiles.placeOnRandomTile(myMinimap, sprites.dungeon.floorLight0)
-    mySprite3.follow(mySprite, 30)
-    mySprite2.follow(mySprite, 30)
-    myMinimap.follow(mySprite, 30)
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
     pause(200)
@@ -116,14 +89,42 @@ scene.onOverlapTile(SpriteKind.Player, sprites.jewels.jewel3, function (sprite, 
     tiles.setCurrentTilemap(tilemap`level5`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 1))
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadIntersection2, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level8`)
+    mySprite3 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . c c c c . . . . 
+        . . . . . . c c d d d d c . . . 
+        . . . . . c c c c c c d c . . . 
+        . . . . c c 4 4 4 4 d c c . . . 
+        . . . c 4 d 4 4 4 4 4 1 c . c c 
+        . . c 4 4 4 1 4 4 4 4 d 1 c 4 c 
+        . c 4 4 4 4 1 4 4 4 4 4 1 c 4 c 
+        f 4 4 4 4 4 1 4 4 4 4 4 1 4 4 f 
+        f 4 4 4 f 4 1 c c 4 4 4 1 f 4 f 
+        f 4 4 4 4 4 1 4 4 f 4 4 d f 4 f 
+        . f 4 4 4 4 1 c 4 f 4 d f f f f 
+        . . f f 4 d 4 4 f f 4 c f c . . 
+        . . . . f f 4 4 4 4 c d b c . . 
+        . . . . . . f f f f d d d c . . 
+        . . . . . . . . . . c c c . . . 
+        `, SpriteKind.Enemy)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(18, 39))
+    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.floorLight0)
+    tiles.placeOnRandomTile(mySprite3, sprites.dungeon.floorLight0)
+    tiles.placeOnRandomTile(myMinimap, sprites.dungeon.floorLight0)
+    mySprite3.follow(mySprite, 30)
+    mySprite2.follow(mySprite, 30)
+    myMinimap.follow(mySprite, 30)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     scene.cameraShake(4, 500)
     statusbar2.value += -10
     pause(500)
 })
-let myMinimap: Sprite = null
-let mySprite2: Sprite = null
 let mySprite3: Sprite = null
+let mySprite2: Sprite = null
+let myMinimap: Sprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
