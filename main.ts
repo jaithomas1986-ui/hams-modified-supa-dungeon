@@ -143,31 +143,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.shrub, function (sprite, l
     scene.cameraShake(4, 500)
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     tiles.setCurrentTilemap(tilemap`level11`)
-    tiles.placeOnRandomTile(mySprite, sprites.castle.tilePath8)
 })
-statusbars.onZero(StatusBarKind.Health, function (status) {
-    pause(200)
-    music.play(music.createSoundEffect(WaveShape.Noise, 5000, 1, 255, 83, 1000, SoundExpressionEffect.Vibrato, InterpolationCurve.Logarithmic), music.PlaybackMode.LoopingInBackground)
-    game.gameOver(false)
-})
-controller.B.onEvent(ControllerButtonEvent.Released, function () {
-    Render.moveWithController(3)
-    statusbar.value += -5
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedWest, function (sprite, location) {
-    scene.cameraShake(4, 500)
-    tiles.setCurrentTilemap(tilemap`level0`)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(17, 42))
-    tiles.placeOnRandomTile(myMinimap, sprites.dungeon.floorDark0)
-    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.floorDark0)
-})
-statusbars.onZero(StatusBarKind.Energy, function (status) {
-    Render.moveWithController(1)
-})
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`baseTransparency16`, function (sprite, location) {
     scene.cameraShake(4, 500)
     tiles.setCurrentTilemap(tilemap`level4`)
-    tiles.placeOnRandomTile(mySprite, sprites.dungeon.collectibleInsignia)
+    tiles.placeOnRandomTile(mySprite, assets.tile`baseTransparency16`)
     mySprite2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . c c c c . . . . 
@@ -209,13 +189,32 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (spr
     mySprite2.follow(mySprite, 30)
     myMinimap.follow(mySprite, 30)
 })
-controller.combos.attachCombo("aud", function () {
-    sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    pause(200)
+    music.play(music.createSoundEffect(WaveShape.Noise, 5000, 1, 255, 83, 1000, SoundExpressionEffect.Vibrato, InterpolationCurve.Logarithmic), music.PlaybackMode.LoopingInBackground)
+    game.gameOver(false)
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.jewels.jewel3, function (sprite, location) {
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
+    Render.moveWithController(3)
+    statusbar.value += -5
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.doorClosedWest, function (sprite, location) {
+    scene.cameraShake(4, 500)
+    tiles.setCurrentTilemap(tilemap`level0`)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(17, 42))
+    tiles.placeOnRandomTile(myMinimap, sprites.dungeon.floorLight0)
+    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.floorLight0)
+})
+statusbars.onZero(StatusBarKind.Energy, function (status) {
+    Render.moveWithController(1)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
     scene.cameraShake(4, 500)
     tiles.setCurrentTilemap(tilemap`level5`)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 1))
+})
+controller.combos.attachCombo("aud", function () {
+    sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.vehicle.roadIntersection2, function (sprite, location) {
     tiles.setCurrentTilemap(tilemap`level8`)
@@ -271,8 +270,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let mySprite3: Sprite = null
 let gun: Sprite = null
-let mySprite2: Sprite = null
 let myMinimap: Sprite = null
+let mySprite2: Sprite = null
 let mySprite4: Sprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar: StatusBarSprite = null
